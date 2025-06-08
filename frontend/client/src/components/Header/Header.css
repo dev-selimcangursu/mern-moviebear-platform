@@ -1,0 +1,28 @@
+#header {
+  width: 100%;
+  height: 60px;
+  background: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: whitesmoke;
+}
+.header__logo__area h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: whitesmoke;
+  margin-left: 20px;
+}
+.header__action__area__button {
+  width: 160px;
+  height: 60px;
+  border-radius: 5px;
+  background-color: transparent;
+  color: whitesmoke;
+  font-weight: 600;
+  border: 1px solid whitesmoke;
+  cursor: pointer;
+  margin-right: 20px;
+  font-size: 18px;
+}

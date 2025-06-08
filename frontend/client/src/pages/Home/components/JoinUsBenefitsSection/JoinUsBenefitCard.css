@@ -1,0 +1,47 @@
+.join__us__benefit__card {
+  width: 100%;
+  max-width: 350px;
+  background-color: #1d172c;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.join__us__benefit__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.join__us__benefit__card__content h4 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #f3f3f3;
+}
+
+.join__us__benefit__card__content p {
+  font-size: 1rem;
+  color: #cccccc;
+  line-height: 1.5;
+}
+
+.join__us__benefit__card__icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+}
+
+.join__us__benefit__card__icon img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}

@@ -1,0 +1,19 @@
+.join__us__benefits__wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  background-color: rgb(0, 0, 0);
+  padding: 50px;
+  border-top: 5px solid #28a745;
+}
+.join__us__benefits__cards__list {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 15px;
+  gap: 20px;
+}
