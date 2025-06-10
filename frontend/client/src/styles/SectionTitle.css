@@ -1,0 +1,23 @@
+.section-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  border-left: 8px solid #27ae60;
+  padding-left: 1.2rem;
+  color: #27ae60;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.section-title:hover {
+  color: #2ecc71;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+    padding-left: 0.8rem;
+    border-left-width: 5px;
+  }
+}

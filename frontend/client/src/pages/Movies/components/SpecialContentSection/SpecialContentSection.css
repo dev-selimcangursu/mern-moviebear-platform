@@ -1,0 +1,9 @@
+.special-content-section {
+  background-color: #000;
+  color: #f0f0f0;
+}
+.special-container {
+  max-width: 1450px;
+  margin: 0 auto;
+  position: relative;
+}
