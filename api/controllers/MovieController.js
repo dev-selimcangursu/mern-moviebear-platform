@@ -146,3 +146,26 @@ export const actionSeriesMovies = async (req, res) => {
   }
 };
 // Komedi Kategorisindeki Diziler
+export const comedySeriesMovies = async (req, res) => {
+  try {
+    const data = await Movie.find({
+      genre_id: new mongoose.Types.ObjectId("68488baff4c2d1ae2e0c0f23"),
+    });
+
+    if (data.length > 0) {
+      return res.json({ success: true, data });
+    } else {
+      return res.json({
+        success: false,
+        message: "Film Bulunamadı!",
+      });
+    }
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      success: false,
+      message: "Sunucu hatası.",
+      error: error.message,
+    });
+  }
+};

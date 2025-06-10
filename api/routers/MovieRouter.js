@@ -9,5 +9,6 @@ router.get('/get/highlights-movie',MovieController.highlightsMovieList)
 router.get('/get/worldwide-movie',MovieController.worldwideMovieList)
 router.get('/get/adapted-the-book-movie',MovieController.adaptedFromBookMovieList)
 router.get('/get/action-series-movie',MovieController.actionSeriesMovies)
+router.get('/get/comedy-series-movie',MovieController.comedySeriesMovies)
 
 module.exports = router
