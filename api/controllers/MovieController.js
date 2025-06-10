@@ -42,12 +42,40 @@ export const isSectionMovie = async (req, res) => {
     }
   } catch (error) {
     console.error(error);
-    return res
-      .status(500)
-      .json({
-        success: false,
-        message: "Sunucu hatası.",
-        error: error.message,
-      });
+    return res.status(500).json({
+      success: false,
+      message: "Sunucu hatası.",
+      error: error.message,
+    });
   }
 };
+//  Öne Çıkan Diziler
+export const highlightsMovieList = async (req, res) => {
+  try {
+    const data = await Movie.find({
+      is_featured_movie: true,
+    });
+    if (data.length > 0) {
+      return res.json({ success: true, data });
+    } else {
+      return res.json({
+        success: false,
+        message: "Film Bulunamadı!",
+      });
+    }
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      success: false,
+      message: "Sunucu hatası.",
+      error: error.message,
+    });
+  }
+};
+// Dünya Çapında Kategorisindeki Diziler
+
+// Kitaptan Uyarlananlar Kategorisindeki Diziler
+
+// Aksiyon Kategorisindeki Diziler
+
+// Komedi Kategorisindeki Diziler
