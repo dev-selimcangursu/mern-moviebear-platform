@@ -27,3 +27,17 @@ export const getSectionMovie = async (slug) => {
     return error;
   }
 };
+
+// Öne Çıkan Diziler Servis
+
+export const getHighlistSectionMovie = async () => {
+  try {
+    const response = await axios.get("http://localhost:3000/movies/get/highlights-movie");
+
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+

@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { fetchIsExclusiveMovie } from "../../services/MovieServices";
-import { getSectionMovie } from "../../services/MovieServices";
+import { fetchIsExclusiveMovie,getHighlistSectionMovie ,getSectionMovie} from "../../services/MovieServices";
 
 // MovieBear'a Özel İçeriklerin Servisten Alınması
 export const fetchIsExclusiveMovieList = createAsyncThunk(
@@ -18,12 +17,22 @@ export const fetchIsSelectMovie = createAsyncThunk(
     return response;
   }
 );
+// Öne Çıkan Filmler 
+export const fetchIsHighlightsMovie = createAsyncThunk(
+  "movies/fetchHighlightsMovie",
+  async () => {
+    const response = await getHighlistSectionMovie();
+    return response;
+  }
+);
 
 const initialState = {
   // MovieBear'a Özel İçerikler
   isExclusiveMovie: [],
   // Seçili Film Bilgileri
   sectionMovie: null,
+  // Öne Çıkan Filmler 
+  highlightsMovie : [] ,
   loading: false,
   error: null,
 };
@@ -57,7 +66,19 @@ const movieSlice = createSlice({
       .addCase(fetchIsSelectMovie.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
-      });
+      })
+        .addCase(fetchIsHighlightsMovie.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchIsHighlightsMovie.fulfilled, (state, action) => {
+        state.loading = false;
+        state.highlightsMovie = action.payload.data;
+      })
+      .addCase(fetchIsHighlightsMovie.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      })
   },
 });
 

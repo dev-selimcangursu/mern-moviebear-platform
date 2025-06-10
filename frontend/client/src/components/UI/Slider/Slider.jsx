@@ -2,7 +2,7 @@ import React from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import MovieCard from "../../../pages/Home/components/SpecialContentSection/components/MovieCard/MovieCard.jsx";
 
-const Slider = ({ movies }) => {
+const Slider = ({ movies = [] }) => {
   return (
     <Splide
       options={{
