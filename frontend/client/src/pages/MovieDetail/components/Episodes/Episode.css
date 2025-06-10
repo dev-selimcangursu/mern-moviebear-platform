@@ -1,0 +1,33 @@
+.movie__part__item {
+  display: flex;
+  gap: 1rem;
+  background-color: #1c1c1c;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.movie__part__item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+}
+
+.movie__part__item__image img {
+  width: 160px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.movie__part__item__main h5 {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
+  color: #28a745;
+}
+
+.movie__part__item__main p {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin: 0;
+}

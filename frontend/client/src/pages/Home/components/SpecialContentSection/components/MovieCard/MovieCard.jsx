@@ -1,11 +1,13 @@
 import React from 'react';
 import './MovieCard.css';
 
-function MovieCard({ image }) {
+function MovieCard({ image ,slug}) {
   return (
-    <div className="movie-card">
-      <img src={image} alt="Movie Poster" className="movie-card__image" />
-    </div>
+    <a href={`/${slug}/tanıtım`}>
+      <div className="movie-card">
+        <img src={`http://localhost:3000/movie-banners/${image}`} alt="Movie Poster" className="movie-card__image" />
+      </div>
+    </a>
   );
 }
 

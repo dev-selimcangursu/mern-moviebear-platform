@@ -1,0 +1,14 @@
+.movie__parts__show__area {
+  padding: 2rem 5%;
+  background-color: #000;
+  position: relative;
+  z-index: 2;
+}
+
+.movie__parts__show__area h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  border-left: 5px solid #28a745;
+  padding-left: 10px;
+}

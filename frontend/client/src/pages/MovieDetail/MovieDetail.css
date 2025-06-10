@@ -1,0 +1,8 @@
+.movie__detail__wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: #111;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
