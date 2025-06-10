@@ -1,5 +1,6 @@
 import Episodes from "../models/Episodes.js";
 
+// Diziye Ait Bölümleri Getir
 export const isSectionMovie = async (req, res) => {
   try {
     const { id } = req.query;
@@ -19,6 +20,38 @@ export const isSectionMovie = async (req, res) => {
       return res.json({
         success: false,
         message: "Film Bölümleri Bulunamadı!",
+      });
+    }
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      success: false,
+      message: "Sunucu hatası.",
+      error: error.message,
+    });
+  }
+};
+
+// Seçili Bölümü Getir
+export const isGetEpisode = async (req, res) => {
+  try {
+    const { id } = req.query;
+
+    if (!id) {
+      return res.status(400).json({
+        success: false,
+        message: "Bölüm ID bilgisi eksik.",
+      });
+    }
+
+    const data = await Episodes.find({ _id: id });
+
+    if (data.length > 0) {
+      return res.json({ success: true, data });
+    } else {
+      return res.json({
+        success: false,
+        message: "Bölüm Bulunamadı!",
       });
     }
   } catch (error) {
