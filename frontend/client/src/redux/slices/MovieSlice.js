@@ -1,5 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { fetchIsExclusiveMovie,getHighlistSectionMovie ,getSectionMovie} from "../../services/MovieServices";
+import {
+  fetchIsExclusiveMovie,
+  getHighlistSectionMovie,
+  getSectionMovie,
+  getWorldwideSectionMovie,
+  getAdaptedTheBookSectionMovie,
+  getActionSeriesSectionMovie,
+} from "../../services/MovieServices";
 
 // MovieBear'a Özel İçeriklerin Servisten Alınması
 export const fetchIsExclusiveMovieList = createAsyncThunk(
@@ -17,7 +24,7 @@ export const fetchIsSelectMovie = createAsyncThunk(
     return response;
   }
 );
-// Öne Çıkan Filmler 
+// Öne Çıkan Filmler
 export const fetchIsHighlightsMovie = createAsyncThunk(
   "movies/fetchHighlightsMovie",
   async () => {
@@ -25,14 +32,46 @@ export const fetchIsHighlightsMovie = createAsyncThunk(
     return response;
   }
 );
+// Dünya Çapında Kategori Diziler
+export const fetchIsWorldwideMovie = createAsyncThunk(
+  "movies/fetchWorldwideMovie",
+  async () => {
+    const response = await getWorldwideSectionMovie();
+    return response;
+  }
+);
+
+// Kitaptan Esinlenmiş Kategorisindeki Diziler
+export const fetchIsAdaptedBookMovie = createAsyncThunk(
+  "movies/fetchAdaptedBookMovie",
+  async () => {
+    const response = await getAdaptedTheBookSectionMovie();
+    return response;
+  }
+);
+export const fetchIsActionSeriesMovie = createAsyncThunk(
+  "movies/fetchActionSeriesMovie",
+  async () => {
+    const response = await getActionSeriesSectionMovie();
+    return response;
+  }
+);
+
+// Aksiyon Kategorisindeki Diziler
 
 const initialState = {
   // MovieBear'a Özel İçerikler
   isExclusiveMovie: [],
   // Seçili Film Bilgileri
   sectionMovie: null,
-  // Öne Çıkan Filmler 
-  highlightsMovie : [] ,
+  // Öne Çıkan Filmler
+  highlightsMovie: [],
+  // Dünya Çapında Kategori Fİlmşer
+  worldwideMovie: [],
+  // Kitaptan Esinlenmiş Kategori Filmler
+  adaptedBookMovie: [],
+  // Aksiyon Kategorisindeki Filmler
+  actionSeriesMovies: [],
   loading: false,
   error: null,
 };
@@ -67,7 +106,7 @@ const movieSlice = createSlice({
         state.loading = false;
         state.error = action.error.message;
       })
-        .addCase(fetchIsHighlightsMovie.pending, (state) => {
+      .addCase(fetchIsHighlightsMovie.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
@@ -79,6 +118,42 @@ const movieSlice = createSlice({
         state.loading = false;
         state.error = action.error.message;
       })
+      .addCase(fetchIsWorldwideMovie.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchIsWorldwideMovie.fulfilled, (state, action) => {
+        state.loading = false;
+        state.worldwideMovie = action.payload.data;
+      })
+      .addCase(fetchIsWorldwideMovie.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      })
+      .addCase(fetchIsAdaptedBookMovie.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchIsAdaptedBookMovie.fulfilled, (state, action) => {
+        state.loading = false;
+        state.adaptedBookMovie = action.payload.data;
+      })
+      .addCase(fetchIsAdaptedBookMovie.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      })
+      .addCase(fetchIsActionSeriesMovie.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchIsActionSeriesMovie.fulfilled, (state, action) => {
+        state.loading = false;
+        state.actionSeriesMovies = action.payload.data;
+      })
+      .addCase(fetchIsActionSeriesMovie.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      });
   },
 });
 

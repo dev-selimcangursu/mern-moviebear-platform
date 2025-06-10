@@ -1,5 +1,6 @@
 import axios from "axios";
 
+// MovieBear'a Özel Diziler
 export const fetchIsExclusiveMovie = async () => {
   try {
     const response = await axios.get(
@@ -29,10 +30,50 @@ export const getSectionMovie = async (slug) => {
 };
 
 // Öne Çıkan Diziler Servis
-
 export const getHighlistSectionMovie = async () => {
   try {
-    const response = await axios.get("http://localhost:3000/movies/get/highlights-movie");
+    const response = await axios.get(
+      "http://localhost:3000/movies/get/highlights-movie"
+    );
+
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+// Dünya Çapında Kategorisine Ait Diziler
+export const getWorldwideSectionMovie = async () => {
+  try {
+    const response = await axios.get(
+      "http://localhost:3000/movies/get/worldwide-movie"
+    );
+
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+// Kitaptan Uyarlananlar Kategori Dizileri
+export const getAdaptedTheBookSectionMovie = async () => {
+  try {
+    const response = await axios.get(
+      "http://localhost:3000/movies/get/adapted-the-book-movie"
+    );
+
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+// Aksiyon Kategorisine Bağlı Diziler
+export const getActionSeriesSectionMovie = async () => {
+  try {
+    const response = await axios.get(
+      "http://localhost:3000/movies/get/action-series-movie"
+    );
 
     return response.data;
   } catch (error) {

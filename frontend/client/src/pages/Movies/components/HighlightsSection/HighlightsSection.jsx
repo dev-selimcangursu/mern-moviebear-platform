@@ -13,7 +13,7 @@ function HighlightsSection() {
   useEffect(() => {
     dispatch(fetchIsHighlightsMovie());
   }, [dispatch]);
-  
+
   return (
     <section className="highlight-content-section">
       <div className="highlight-container">
