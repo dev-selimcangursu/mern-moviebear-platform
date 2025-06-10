@@ -52,7 +52,7 @@ const movieSlice = createSlice({
       })
       .addCase(fetchIsSelectMovie.fulfilled, (state, action) => {
         state.loading = false;
-        state.sectionMovie = action.payload.data
+        state.sectionMovie = action.payload.data;
       })
       .addCase(fetchIsSelectMovie.rejected, (state, action) => {
         state.loading = false;

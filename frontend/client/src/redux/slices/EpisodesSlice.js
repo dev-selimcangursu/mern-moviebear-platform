@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { fetchEpisodes } from "../../services/EpisodesService";
+import { fetchEpisodes, fetchGetEpisode } from "../../services/EpisodesService";
 
 export const fetchAllEpisodes = createAsyncThunk(
   "movies/fetchEpisodes",
@@ -8,9 +8,19 @@ export const fetchAllEpisodes = createAsyncThunk(
     return response;
   }
 );
+export const fetchEpisode = createAsyncThunk(
+  "movies/fetchEpisode",
+  async (id) => {
+    const response = await fetchGetEpisode(id);
+    return response;
+  }
+);
 
 const initialState = {
+  // Filme Ait Bölümler
   episodes: [],
+  // Seçilin Bölüm
+  episode: [],
   loading: false,
   error: null,
 };
@@ -30,6 +40,18 @@ export const EpisodesSlice = createSlice({
         state.episodes = action.payload.data;
       })
       .addCase(fetchAllEpisodes.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      })
+      .addCase(fetchEpisode.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchEpisode.fulfilled, (state, action) => {
+        state.loading = false;
+        state.episode = action.payload.data;
+      })
+      .addCase(fetchEpisode.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
       });
