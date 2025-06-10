@@ -6,6 +6,7 @@ import {
   getWorldwideSectionMovie,
   getAdaptedTheBookSectionMovie,
   getActionSeriesSectionMovie,
+  getComedySectionMovie
 } from "../../services/MovieServices";
 
 // MovieBear'a Özel İçeriklerin Servisten Alınması
@@ -49,6 +50,7 @@ export const fetchIsAdaptedBookMovie = createAsyncThunk(
     return response;
   }
 );
+// Aksiyon Kategorisindeki Diziler
 export const fetchIsActionSeriesMovie = createAsyncThunk(
   "movies/fetchActionSeriesMovie",
   async () => {
@@ -56,22 +58,29 @@ export const fetchIsActionSeriesMovie = createAsyncThunk(
     return response;
   }
 );
-
-// Aksiyon Kategorisindeki Diziler
-
+// Komedi Kategorisindeki Diziler
+export const fetchIsComedySeriesMovie = createAsyncThunk(
+  "movies/fetchIsComedySeriesMovie",
+  async () => {
+    const response = await getComedySectionMovie();
+    return response;
+  }
+);
 const initialState = {
   // MovieBear'a Özel İçerikler
   isExclusiveMovie: [],
-  // Seçili Film Bilgileri
+  // Seçili Diziler Bilgileri
   sectionMovie: null,
-  // Öne Çıkan Filmler
+  // Öne Çıkan Diziler
   highlightsMovie: [],
-  // Dünya Çapında Kategori Fİlmşer
+  // Dünya Çapında Kategori Diziler
   worldwideMovie: [],
-  // Kitaptan Esinlenmiş Kategori Filmler
+  // Kitaptan Esinlenmiş Kategori Diziler
   adaptedBookMovie: [],
-  // Aksiyon Kategorisindeki Filmler
+  // Aksiyon Kategorisindeki Diziler
   actionSeriesMovies: [],
+  // Komedi Kategorisindeki Diziler
+  comedySeriesMovies :[],
   loading: false,
   error: null,
 };
@@ -153,7 +162,19 @@ const movieSlice = createSlice({
       .addCase(fetchIsActionSeriesMovie.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
-      });
+      })
+        .addCase(fetchIsComedySeriesMovie.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchIsComedySeriesMovie.fulfilled, (state, action) => {
+        state.loading = false;
+        state.comedySeriesMovies = action.payload.data;
+      })
+      .addCase(fetchIsComedySeriesMovie.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      })
   },
 });
 

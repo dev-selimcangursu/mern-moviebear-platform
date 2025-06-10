@@ -81,4 +81,16 @@ export const getActionSeriesSectionMovie = async () => {
     return error;
   }
 };
+// Komedi Kategorisine Bağlı Diziler
+export const getComedySectionMovie = async () => {
+  try {
+    const response = await axios.get(
+      "http://localhost:3000/movies/get/comedy-series-movie"
+    );
 
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
