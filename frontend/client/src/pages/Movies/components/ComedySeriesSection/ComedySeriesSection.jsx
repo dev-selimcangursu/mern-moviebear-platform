@@ -7,10 +7,11 @@ import { fetchIsComedySeriesMovie } from "../../../../redux/slices/MovieSlice";
 import { useEffect } from "react";
 
 function ComedySeriesSection() {
+  
   const dispatch = useDispatch();
   const movies = useSelector((state) => state.movies.comedySeriesMovies);
   console.log(movies);
-
+ 
   useEffect(() => {
     dispatch(fetchIsComedySeriesMovie());
   }, [dispatch]);

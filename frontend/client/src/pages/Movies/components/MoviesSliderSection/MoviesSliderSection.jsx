@@ -1,29 +1,32 @@
 import React from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
-import './MoviesSliderSection.css';
+import "./MoviesSliderSection.css";
 
 const movies = [
   {
     id: 1,
-    name: "Inception",
-    description: "A thief who steals corporate secrets through dream-sharing technology.",
-    category: "Sci-Fi, Thriller",
-    banner: "https://image.tmdb.org/t/p/original/s3TBrRGB1iav7gFOCNx3H31MoES.jpg",
+    name: "Eşref Rüya",
+    description:
+      "Çocukluğunda uzaktan aşık olduğu ve “Rüya” adını taktığı gizemli bir kız vardır. Yıllar sonra karşılaştığında, hem aşk hem de intikam duygularıyla yüzleşir. ",
+    category: "Aksiyon,Dram,Şiddet",
+    banner: "http://localhost:3000/movie-banners/esref-ruya-banner.webp",
   },
   {
     id: 2,
-    name: "Interstellar",
-    description: "A team of explorers travel through a wormhole in space.",
-    category: "Sci-Fi, Adventure",
-    banner: "https://image.tmdb.org/t/p/original/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg",
+    name: "Breaking Bad",
+    description:
+      "Walter White, New Mexico’da yaşayan bir lise kimya öğretmenidir. Sessiz ve sıradan bir yaşam sürerken, bir gün akciğer kanseri olduğunu öğrenir. Ailesine maddi güvence bırakmak isteyen Walter, eski öğrencisi Jesse Pinkman ile birlikte metamfetamin üretmeye başlar.",
+    category: "Suç, Drama, Gerilim",
+    banner: "http://localhost:3000/movie-banners/breaking-bad-banner.webp",
   },
   {
     id: 3,
-    name: "The Dark Knight",
-    description: "Batman faces the Joker, a criminal mastermind who wants to create chaos.",
-    category: "Action, Crime, Drama",
-    banner: "https://image.tmdb.org/t/p/original/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+    name: "The Walking Dead",
+    description:
+      "Rick Grimes, bir polis memurudur. Görev sırasında vurulup komaya girer. Haftalar sonra uyandığında hastane tamamen terk edilmiştir — dış dünya zombilerle (dizide “walkers” denir) doludur. Ailesini bulmak için yola çıkan Rick, hayatta kalan insanlarla karşılaşır ve kısa sürede bir lider haline gelir..",
+    category: "Aksiyon, Drama, Gerilim , Korku",
+    banner: "http://localhost:3000/movie-banners/the-walking-dead-banner.jpg",
   },
 ];
 
