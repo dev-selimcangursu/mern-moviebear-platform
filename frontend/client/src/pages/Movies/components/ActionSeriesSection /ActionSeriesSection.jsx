@@ -1,20 +1,20 @@
-import React from 'react'
-import './ActionSeriesSection.css'
-import MoviesSliderSection from '../../../../components/UI/MoviesSliderSection/MoviesSliderSection'
-import '../../../../styles/SectionTitle.css'
+import React from "react";
+import "./ActionSeriesSection.css";
+import MoviesSliderSection from "../../../../components/UI/MoviesSliderSection/MoviesSliderSection";
+import "../../../../styles/SectionTitle.css";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchIsActionSeriesMovie } from "../../../../redux/slices/MovieSlice";
 import { useEffect } from "react";
 
 function ActionSeriesSection() {
-
-    const dispatch = useDispatch();
-    const movies = useSelector((state) => state.movies.actionSeriesMovies);
-    console.log(movies);
-  
-    useEffect(() => {
-      dispatch(fetchIsActionSeriesMovie());
-    }, [dispatch]);
+  const dispatch = useDispatch();
+  // Redux store'dan aksiyon türündeki dizileri al
+  const movies = useSelector((state) => state.movies.actionSeriesMovies);
+  console.log(movies);
+  // Bileşen yüklendiğinde aksiyon dizilerini fetch et
+  useEffect(() => {
+    dispatch(fetchIsActionSeriesMovie());
+  }, [dispatch]);
   return (
     <section className="action-series-content-section">
       <div className="action-series-container">
@@ -22,7 +22,7 @@ function ActionSeriesSection() {
         <MoviesSliderSection data={movies} />
       </div>
     </section>
-  )
+  );
 }
 
-export default ActionSeriesSection
+export default ActionSeriesSection;

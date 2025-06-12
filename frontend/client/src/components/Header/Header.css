@@ -1,5 +1,5 @@
 #header {
-    position: relative; 
+  position: fixed;
   width: 100%;
   height: 60px;
   background: transparent;
@@ -8,7 +8,20 @@
   justify-content: space-between;
   align-items: center;
   color: whitesmoke;
-   z-index: 1000; 
+  z-index: 10000;
+  margin-top: 20px;
+}
+.header__logo__area {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.header__logo__area a {
+  font-size: 21px;
+  text-decoration: none;
+  color: whitesmoke;
 }
 .header__logo__area h3 {
   font-size: 1.5rem;
@@ -27,4 +40,15 @@
   cursor: pointer;
   margin-right: 20px;
   font-size: 18px;
+}
+.header__link__button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 23px;
+  padding: 0;
+}
+.header__link__button:hover {
+  text-decoration: underline;
 }

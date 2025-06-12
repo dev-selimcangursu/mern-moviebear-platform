@@ -12,7 +12,7 @@ export const fetchIsExclusiveMovie = async () => {
     return error;
   }
 };
-
+// Belirli bir kategori sluguna ait dizileri getir
 export const getSectionMovie = async (slug) => {
   try {
     const response = await axios.get(
@@ -29,7 +29,7 @@ export const getSectionMovie = async (slug) => {
   }
 };
 
-// Öne Çıkan Diziler Servis
+// Öne Çıkan Diziler listesi
 export const getHighlistSectionMovie = async () => {
   try {
     const response = await axios.get(

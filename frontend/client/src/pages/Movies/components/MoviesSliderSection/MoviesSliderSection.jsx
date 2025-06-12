@@ -2,7 +2,7 @@ import React from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import "./MoviesSliderSection.css";
-
+import Header from '../../../../components/Header/Header'
 const movies = [
   {
     id: 1,
@@ -33,6 +33,7 @@ const movies = [
 function MoviesSliderSection() {
   return (
     <div style={{ width: "100%", height: "100vh" }}>
+      <Header/>
       <Splide
         options={{
           type: "loop",

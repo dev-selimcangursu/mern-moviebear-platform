@@ -8,9 +8,10 @@ import { useEffect } from "react";
 
 function BookAdaptationsSection() {
   const dispatch = useDispatch();
+  // Redux store'dan kitaptan uyarlanan filmleri al
   const movies = useSelector((state) => state.movies.adaptedBookMovie);
   console.log(movies);
-
+  // Bileşen yüklendiğinde kitaptan uyarlanan filmleri getir
   useEffect(() => {
     dispatch(fetchIsAdaptedBookMovie());
   }, [dispatch]);

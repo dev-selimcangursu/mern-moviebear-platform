@@ -8,37 +8,42 @@ import CookiePreferences from "./components/CookiePreferencesModal/CookiePrefere
 import "./Footer.css";
 
 function Footer() {
+  // Modal durumları
   const [modals, setModals] = useState({
-    terms: false,
-    preInfo: false,
-    legal: false,
-    privacy: false,
-    cookies: false,
+    terms: false, // Mesafeli Satış Sözleşmesi modal durumu
+    preInfo: false, // Ön Bilgilendirme Formu modal durumu
+    legal: false, // Kullanım Şartları modal durumu
+    privacy: false, // Gizlilik modal durumu
+    cookies: false, // Çerez Tercihleri modal durumu
   });
-
+  // Modal açma fonksiyonu
   const openModal = (type) => {
     setModals({ ...modals, [type]: true });
   };
-
+  // Modal kapatma fonksiyonu
   const closeModal = (type) => {
     setModals({ ...modals, [type]: false });
   };
 
   return (
-<>
-    <div className="footer">
-      <div className="footer__copyright__area">
-        <p>© 2025 MovieeBear, Tüm hakları Saklıdır</p>
-      </div>
+    <>
+      <div className="footer">
+        <div className="footer__copyright__area">
+          <p>© 2025 MovieeBear, Tüm hakları Saklıdır</p>
+        </div>
 
-      <div className="footer__action__area">
-        <button onClick={() => openModal("terms")}>Mesafeli Satış Sözleşmesi</button>
-        <button onClick={() => openModal("preInfo")}>Ön Bilgilendirme Formu</button>
-        <button onClick={() => openModal("legal")}>Kullanım Şartları</button>
-        <button onClick={() => openModal("privacy")}>Gizlilik</button>
-        <button onClick={() => openModal("cookies")}>Çerez Tercihleri</button>
+        <div className="footer__action__area">
+          <button onClick={() => openModal("terms")}>
+            Mesafeli Satış Sözleşmesi
+          </button>
+          <button onClick={() => openModal("preInfo")}>
+            Ön Bilgilendirme Formu
+          </button>
+          <button onClick={() => openModal("legal")}>Kullanım Şartları</button>
+          <button onClick={() => openModal("privacy")}>Gizlilik</button>
+          <button onClick={() => openModal("cookies")}>Çerez Tercihleri</button>
+        </div>
       </div>
-    </div>
 
       <TermsAndConditions
         isModalOpen={modals.terms}
@@ -69,7 +74,7 @@ function Footer() {
         handleOk={() => closeModal("cookies")}
         handleCancel={() => closeModal("cookies")}
       />
-</>
+    </>
   );
 }
 

@@ -9,9 +9,10 @@ import { useEffect } from "react";
 function ComedySeriesSection() {
   
   const dispatch = useDispatch();
+  // Redux store'dan komedi dizilerini seç
   const movies = useSelector((state) => state.movies.comedySeriesMovies);
   console.log(movies);
- 
+   // Bileşen yüklendiğinde komedi dizilerini çekmek için dispatch 
   useEffect(() => {
     dispatch(fetchIsComedySeriesMovie());
   }, [dispatch]);

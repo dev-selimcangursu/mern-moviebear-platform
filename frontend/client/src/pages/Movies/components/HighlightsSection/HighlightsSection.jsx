@@ -7,9 +7,10 @@ import { fetchIsHighlightsMovie } from "../../../../redux/slices/MovieSlice";
 
 function HighlightsSection() {
   const dispatch = useDispatch();
+  // Redux store'dan öne çıkan dizileri seç
   const movies = useSelector((state) => state.movies.highlightsMovie);
   console.log(movies);
-
+  // Bileşen yüklendiğinde öne çıkan dizileri fetch et
   useEffect(() => {
     dispatch(fetchIsHighlightsMovie());
   }, [dispatch]);

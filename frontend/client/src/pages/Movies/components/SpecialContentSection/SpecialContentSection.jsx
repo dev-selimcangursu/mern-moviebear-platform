@@ -8,8 +8,11 @@ import { useEffect } from "react";
 
 function SpecialContentSection() {
   const dispatch = useDispatch();
+  // Redux store'dan özel dizileri seç
+
   const movies = useSelector((state) => state.movies.highlightsMovie);
   console.log(movies);
+  // Bileşen yüklendiğinde özel dizileri fetch et
   useEffect(() => {
     dispatch(fetchIsExclusiveMovieList());
   }, [dispatch]);

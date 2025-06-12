@@ -6,8 +6,10 @@ import { fetchIsExclusiveMovieList } from "../../../../redux/slices/MovieSlice.j
 
 function SpecialContent() {
   const dispatch = useDispatch();
+    // özel içerikli filmler listesi
   const exclusiveMovies = useSelector((state) => state.movies.isExclusiveMovie);
   console.log(exclusiveMovies)
+  // Bileşen yüklendiğinde özel içerik filmleri yükle
   useEffect(() => {
     dispatch(fetchIsExclusiveMovieList());
   }, [dispatch]);

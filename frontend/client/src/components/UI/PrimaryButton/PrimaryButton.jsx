@@ -3,7 +3,7 @@ import "./PrimaryButton.css";
 function PrimaryButton(props) {
   return (
     <div className="primary-button">
-      <button className="primary-btn">{props.children}</button>
+      <button type={props.type} className="primary-btn">{props.children}</button>
     </div>
   );
 }

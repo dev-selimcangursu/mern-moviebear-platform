@@ -6,12 +6,14 @@ import { fetchEpisode } from "../../redux/slices/EpisodesSlice";
 
 function MoviePlay() {
   const dispatch = useDispatch();
-  const episodeId = useParams();
+  const episodeId = useParams(); // URL'den bölüm ID'sini al
 
+  // episodeId değiştiğinde ilgili bölümü getir
   useEffect(() => {
     dispatch(fetchEpisode(episodeId.id));
   }, [dispatch, episodeId.id]);
-
+  
+  // seçilen bölümü al
   const episode = useSelector((state) => state.episodes.episode);
 
   return (

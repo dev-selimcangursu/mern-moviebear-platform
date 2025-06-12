@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { fetchEpisodes, fetchGetEpisode } from "../../services/EpisodesService";
 
+// Belirli bir filme ait tüm bölümleri getiren asenkron işlem
 export const fetchAllEpisodes = createAsyncThunk(
   "movies/fetchEpisodes",
   async (id) => {
@@ -8,6 +9,7 @@ export const fetchAllEpisodes = createAsyncThunk(
     return response;
   }
 );
+// Tek bir bölümü getiren asenkron işlem
 export const fetchEpisode = createAsyncThunk(
   "movies/fetchEpisode",
   async (id) => {
