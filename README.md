@@ -86,12 +86,12 @@ Netflix benzeri bir deneyimi özgün özelliklerle birleştirerek tam kapsamlı 
 
 ✨ **MovieBear** ile keyifli seyirler!  
 
-![Açıklama]('screenshot/ss1.png)
-![Açıklama]('screenshot/ss2.png)
-![Açıklama]('screenshot/ss3.png)
-![Açıklama]('screenshot/ss5.png)
-![Açıklama]('screenshot/ss6.png)
-![Açıklama]('screenshot/ss7.png)
-![Açıklama]('screenshot/ss10.png)
+![Açıklama](screenshot/ss1.png)
+![Açıklama](screenshot/ss2.png)
+![Açıklama](screenshot/ss3.png)
+![Açıklama](screenshot/ss5.png)
+![Açıklama](screenshot/ss6.png)
+![Açıklama](screenshot/ss7.png)
+![Açıklama](screenshot/ss10.png)
 
 ✨ **MovieBear Tüm Ekran Görüntüleri İçin ZIP dosyasını indirebilirsiniz** 
