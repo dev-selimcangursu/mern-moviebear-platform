@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 
 const EpisodeSchema = new mongoose.Schema(
   {
-    movie_id: { type: mongoose.Schema.Types.ObjectId, ref:"Movie" },
-    title: { type: String },
-    video_url: { type: String },
-    description: { type: String },
-    episode_image: { type: String }, 
+    movie_id: { type: mongoose.Schema.Types.ObjectId, ref:"Movie" }, // Film ID
+    title: { type: String }, // Dizi Bölğm Başlığı
+    video_url: { type: String }, // Dizi  Bölüm İframe Url Link
+    description: { type: String }, // Dizi Bölüm Açıklaması
+    episode_image: { type: String },  // Dizi Bölüm Temsili Görsel
   },
   { timestamps: true }
 );

@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 const MovieRouter = require("./routers/MovieRouter");
 const EpisodesRouter = require("./routers/EpisodesRouter");
+const AuthRouter = require("./routers/AuthRouter");
 
 // Middleware
 app.use(cors());
@@ -23,6 +24,8 @@ mongoose
 // Rotalar...
 app.use("/movies", MovieRouter);
 app.use("/episodes", EpisodesRouter);
+app.use("/auth", AuthRouter);
+
 // Port Belirleme
 const PORT = process.env.PORT || 3000;
 
